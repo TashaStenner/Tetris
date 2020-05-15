@@ -13,11 +13,11 @@ const startBtn = document.querySelector(`#start-button`);
 let timerId;
 let score = 0;
 const colors = [
-    `orange`, 
-    `pink`, 
-    `green`,
-    `purple`,
-    `red`  
+    `linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(90,9,121,1) 35%, rgba(0,212,255,1) 100%)`, 
+    `linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,47,1) 35%, rgba(255,0,224,1) 100%)`, 
+    `linear-gradient(90deg, rgba(10,36,0,1) 0%, rgba(9,121,28,1) 35%, rgba(0,255,171,1) 100%)`,
+    `linear-gradient(90deg, rgba(10,36,0,1) 0%, rgba(191,98,11,1) 35%, rgba(255,0,0,1) 100%)`,
+    `linear-gradient(90deg, rgba(10,36,0,1) 0%, rgba(11,191,180,1) 35%, rgba(255,0,194,1) 100%)`  
 ];
 
 // The Tetrominoes
@@ -69,14 +69,14 @@ let current = theTetrominoes[randomSelection][currentRotation];
 const draw = () => {
     current.forEach(index => {
         squares[currentPosition + index].classList.add(`tetromino`)
-        squares[currentPosition + index].style.backgroundColor = colors[randomSelection]
+        squares[currentPosition + index].style.backgroundImage = colors[randomSelection]
     })
 }
 
 const undraw = () => {
     current.forEach(index => {
         squares[currentPosition + index].classList.remove(`tetromino`)
-        squares[currentPosition + index].style.backgroundColor = ``
+        squares[currentPosition + index].style.backgroundImage = ``
     })
 }
 
@@ -151,11 +151,11 @@ const upNextTetromino = [
 const displayUpNext = () => {
     displaySquares.forEach(square => {
         square.classList.remove(`tetromino`)
-        square.style.backgroundColor = ''
+        square.style.backgroundImage = ''
     })
     upNextTetromino[nextRandom].forEach(index => {
         displaySquares[displayIndex + index].classList.add(`tetromino`)
-        displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
+        displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom]
     })
 }
 
@@ -181,7 +181,7 @@ const addScore = () => {
           row.forEach(index => {
             squares[index].classList.remove(`taken`)
             squares[index].classList.remove(`tetromino`)
-            squares[index].style.backgroundColor = ''
+            squares[index].style.backgroundImage = ''
           })
           const squaresRemoved = squares.splice(i, width)
           squares = squaresRemoved.concat(squares)
@@ -194,6 +194,7 @@ const gameOver = () => {
     if(current.some(index => squares[currentPosition + index].classList.contains(`taken`))) {
         scoreDisplay.innerHTML = `Game Over`
         clearInterval(timerId)
+        undraw()
     }
 }
 

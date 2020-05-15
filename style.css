@@ -5,14 +5,43 @@
     margin: 0; 
     font-family: 'DM Mono', monospace;
 }
+
+h1 {
+    margin-bottom: 8px;
+    margin-left: 40px
+}
+
+h3 {
+    margin-left: 50px;
+}
+
+#start-button {
+    background-color: red;
+    border:2px solid white;
+    color: white;
+    padding: 4px;
+    margin: 8px 0;
+    margin-left: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#start-button:hover {
+    background-color: white;
+    border:2px solid red;
+    color: red;
+}
+
 #container {
     display: flex; 
+    width: 100vw;
 }
 
 .grid {
     width: 200px;
     height: 400px;
-    background-color: yellow;
+    background-color: black;
+    border: 2px solid yellow;
     display: flex;
     flex-wrap: wrap;
 }
@@ -23,7 +52,8 @@
 }
 
 .tetromino {
-    background-color: blue;
+    outline: 1px solid white;
+
 }
 
 .mini-grid {
@@ -32,7 +62,8 @@
     margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
-    background-color: pink;
+    border: 2px solid yellow;
+    background-color: black;
 }
 
 .mini-grid div {
