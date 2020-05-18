@@ -70,3 +70,18 @@ h3 {
     height: 20px;
     width: 20px;
 }
+
+#instructions {
+    margin-left: 40px;
+    width: 200px;
+
+}
+
+p {
+    text-decoration: underline;
+    text-align: center;
+}
+
+li {
+    margin-top: 2px;
+}
