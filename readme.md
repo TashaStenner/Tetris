@@ -1,5 +1,6 @@
 # Tetris
-A classic Tetris game built to refine my javascript skills learn to impliment keycodes and movement
+A classic Tetris game built using a tutorial to refine my javascript skills learn to impliment keycodes and movement. 
+I have also adjusted all the styles from the original turtorial
 
 ## Tech  Stack 
 * Javascript
