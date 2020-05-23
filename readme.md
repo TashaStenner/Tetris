@@ -6,7 +6,7 @@ A classic Tetris game built to refine my javascript skills learn to impliment ke
 * HTML
 * CSS
 
-## Left to do
+## Future Improvements
 * Create a level system 
 * Add a database so you can see the current high scores
 
